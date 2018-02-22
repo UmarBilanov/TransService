@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<!--Header Ends================================================ -->
+
+<div id="carouselSection" class="cntr"> 
+		<div id="myCarousel" class="carousel slide">
+			<div class="carousel-inner">
+				<div class="item active">
+					<a class="cntr" href="#"><img src="{% static 'images/carousel/1.png' %}" alt=""></a>
+				</div>
+				<div class="item">
+					<a class="cntr" href="#"><img src="{% static 'images/carousel/2.png' %}" alt=""></a>
+				</div>
+				<div class="item">
+					<a class="cntr" href="#"><img src="{% static 'images/carousel/3.png' %}" alt=""></a>
+				</div>
+			</div>
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+			<a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+		</div>
+</div>
+
+<!-- Sectionone block ends======================================== -->
+ 
+<div id="welcomeSection"> 
+	<div class="container cntr">
+
+		<h2>Добро пожаловать!</h2>
+		<p>
+			Заказы по телефону принимаем с 9-00 до 21-00 </p> <br>
+		<h2>+996 706 41 31 41</h2>
+		<br>
+		<br>
+			<h4> Переезд и перевозка по Бишкеку, Кыргызстану и СНГ. </h4>
+			<div id="testimonial" class="carousel slide">
+			<div class="carousel-inner">
+				<div class="item active">
+					<p> Компания «ТрансСервис» рада предложить вам современный сервис и комплексные услуги по переезду и перевозке отдельных вещей, мебели, техники и… чего угодно.<br/><br/></p>
+					</div>
+				<div class="item">
+					<p> Чтобы оформить заявку или получить помощь специалиста — звоните по нашему телефону  (+996) 706 413141.<br/><br/></p>
+				</div>
+				<div class="item">
+					<p> Мы предлагаем комплексный подход по перевозкам для того, чтобы максимально оградить Вас от всех хлопот переездов.<br/><br/></p>
+				</div>
+			</div>
+			<a class="left carousel-control" href="#testimonial" data-slide="prev">&lsaquo;</a>
+			<a class="right carousel-control" href="#testimonial" data-slide="next">&rsaquo;</a>
+		</div>
+
+	</div>
+</div>
+
+<!-- Our Services======================================== -->
+
+<div id="ourServices"> 	
+<div class="container">	
+		<h2 class="cntr">НАШИ УСЛУГИ</h2>
+	<br>
+		<div class="row">
+		<div class="span4">
+			<div class="thumbnail">
+
+				<h3>Офисные, дачные, квартирный переезды.</h3>
+					<img src="{% static 'images/carousel/moves_desktop2x.png' %}" class="img-thumbnail">
+			</div>
+			<br>
+			<div class="thumbnail">
+			
+			<h3>Перевозка оборудования и мебели</h3>
+				<img src="{% static 'images/carousel/household-goods_desktop2x.png' %}" class="img-thumbnail">
+			</div>
+			<br>
+		</div>
+		
+		<div class="span4">
+			<div class="thumbnail">
+				<h3><br>Грузовые перевозки</h3>
+				<img src="{% static 'images/carousel/freight_desktop2x.png' %}" class="img-thumbnail">
+			</div>
+			<br>
+
+			<div class="thumbnail">
+				<h3><br>Перевозка животных</h3>
+				<img src="{% static 'images/carousel/animals_desktop2x.png' %}" class="img-thumbnail">
+			</div>
+			<br>
+		</div>
+
+		<div class="span4">
+			<div class="thumbnail">
+				<h3><br>Перевозка людей</h3>
+				<br>
+				<br>
+				<img src="{% static 'images/carousel/Mercedes-Sprinter-20.png' %}" class="img-thumbnail">
+			</div>
+			<br>
+
+			<div class="thumbnail">
+				<h3><br>Перевозка транспорта</h3>
+				<img src="{% static 'images/carousel/vehicles_desktop2x.png' %}" class="img-thumbnail">
+			</div>
+			<br>
+		</div>
+	</div>
+</div>
+</div>
+
+
+
+<!-- Our Portfolio======================================== -->
+<div id="howItWorks">
+	<br>
+	<br>
+<h2 class="cntr">НАША АВТОБАЗА</h2>
+	<br>
+<div class="container">	
+
+	<div class="row">
+		<div class="tabbable tabs">
+			<div class="tab-content label-primary">
+				<div class="tab-pane active" id="all">
+					<ul class="thumbnails">
+						{%	for product in products %}
+						<li class="span4">
+							<div class="thumbnail">
+								<div class="blockDtl">
+								<div>
+									<img src="/" class="img-responsive">
+								</div>
+								<h3>{{ product.name }}</h3>
+								<table class="table">
+								 <thead>
+								 	<tr class="table-active">
+								 		<th>Высота</th>
+								 		<th>Длина</th>
+								 		<th>Ширина</th>
+								 		<th>Груз</th>
+								 	</tr>
+								 </thead>
+								 <tbody>
+								 	<tr class="table-info">
+								 		<th>{{ product.height}} м</th>
+								 		<th>{{ product.length}} м</th>
+								 		<th>{{ product.width}} м</th>
+								 		<th>{{ product.weight}} т</th>
+								 	</tr>
+								 </tbody>
+								</table>
+								<h3>{{ product.price }} сомов/1 час</h3>
+								<div class="add-to-cart-btn">
+								<button class="btn btn-info">Заказать</button>
+								<br>
+								</div>
+
+								</div>
+							</div>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+{% endblock %}
