@@ -124,14 +124,14 @@
 			<div class="tab-content label-primary">
 				<div class="tab-pane active" id="all">
 					<ul class="thumbnails">
-						{%	for product in products %}
+						{%	for product_image in products_images %}
 						<li class="span4">
 							<div class="thumbnail">
 								<div class="blockDtl">
+								<h3>{{ product_image.product.name }}</h3>
 								<div>
-									<img src="/" class="img-responsive">
+									<img src="{{ product_image.image.url }}" class="img-responsive">
 								</div>
-								<h3>{{ product.name }}</h3>
 								<table class="table">
 								 <thead>
 								 	<tr class="table-active">
@@ -143,14 +143,14 @@
 								 </thead>
 								 <tbody>
 								 	<tr class="table-info">
-								 		<th>{{ product.height}} м</th>
-								 		<th>{{ product.length}} м</th>
-								 		<th>{{ product.width}} м</th>
-								 		<th>{{ product.weight}} т</th>
+								 		<th>{{ product_image.product.height}} м</th>
+								 		<th>{{ product_image.product.length}} м</th>
+								 		<th>{{ product_image.product.width}} м</th>
+								 		<th>{{ product_image.product.weight}} т</th>
 								 	</tr>
 								 </tbody>
 								</table>
-								<h3>{{ product.price }} сомов/1 час</h3>
+								<h3>{{ product_image.product.price }} сомов/1 час</h3>
 								<div class="add-to-cart-btn">
 								<button class="btn btn-info">Заказать</button>
 								<br>
@@ -167,4 +167,58 @@
 	</div>
 </div>
 </div>
+
+
+
+<div id="contactSection">
+<h2 class="cntr">КОНТАКТЫ</h2>
+	<br>
+	<div class="container">	
+		<div class="row">	
+		<div class="span7">
+			<img src="{% static 'images/carousel/312.jpg' %}" alt="">
+		</div> 
+		<div class="span5">	
+			<form class="form-horizontal">
+				<fieldset>
+				  <div class="control-group">
+					<label class="control-label" for="input01">Имя</label>
+					<div class="controls">
+					  <input type="text" class="input-xlarge" id="input01">
+					 
+					</div>
+				  </div>
+				   <div class="control-group">
+					<label class="control-label" for="input11">Email адресс</label>
+					<div class="controls">
+					  <input type="text" class="input-xlarge" id="input11">
+					 
+					</div>
+				  </div>
+				   <div class="control-group">
+					<label class="control-label" for="textarea">Сообщения</label>
+					<div class="controls">
+					  <textarea class="input-xlarge" id="textarea" rows="3" style="height:65px"></textarea>
+					</div>
+				  </div>
+				  <div class="form-actions">
+					<button type="submit" class="btn btn-info">Отправить</button>
+					<button class="btn">Отмена</button>
+				  </div>
+				</fieldset>
+			  </form>
+			<div>
+				<h4>ТрансСервис</h4>
+				<p>
+					Кыргыpстан г.Бишкек ул.Л.Толстой д.123<br>
+					Phone: 0706413141; 0776414341<br>
+					Email: <a href="mailto:info@transservice.com">info@transservice.com</a><br>
+					website: <a href="http://www.transservice.kg">www.transservice.kg</a>
+				</p>
+			</div>
+		</div>
+		
+		</div> 
+		</div> 
+</div> 
 {% endblock %}

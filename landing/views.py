@@ -6,5 +6,5 @@ from products.models import *
 
 # Create your views here.
 def landing(request):
-	products = Product.objects.filter(is_active=True)
+	products_images = ProductImage.objects.filter(is_active=True, is_main=True)
 	return render(request, 'landing/home.html', locals())

@@ -13,7 +13,7 @@ class ProductImageInline(admin.TabularInline):
 class ProductAdmin (admin.ModelAdmin):
 	list_display = [field.name for field in Product._meta.fields]
 	inlines = [ProductImageInline]
-    
+
 	class Meta:
 		model = Product
 
